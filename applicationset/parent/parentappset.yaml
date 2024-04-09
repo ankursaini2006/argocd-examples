@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: parent-crossplane
+spec:
+  generators:
+  - clusters: {}
+  template:
+    metadata:
+      name: 'parent-{{name}}-crossplane'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/ankursaini2006/argocd-examples.git
+        targetRevision: example
+        path: "applicationset/parent"
+      destination:
+        name: in-cluster
+        namespace: argocd
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

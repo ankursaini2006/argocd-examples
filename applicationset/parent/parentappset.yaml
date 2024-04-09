@@ -6,13 +6,12 @@ spec:
   generators:
   - list:
       elements:
-      - appname: ns1
-        namespace: ns1
-        cluster: in-cluster
-      - appname: ns2
-        namespace: ns2
-        cluster: in-cluster
-  - clusters: {}
+        - appname: ns1
+          namespace: ns1
+          cluster: in-cluster
+        - appname: ns2
+          namespace: ns2
+          cluster: in-cluster
   template:
     metadata:
       name: "{{appname}}"

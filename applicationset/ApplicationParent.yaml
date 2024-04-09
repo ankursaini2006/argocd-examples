@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: parent-child-app-example
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: in-cluster

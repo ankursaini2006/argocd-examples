@@ -11,7 +11,7 @@ spec:
         cluster: in-cluster
       - appName: app2
         namespace: ns-app1
-        cluster: in-cluster-error
+        cluster: in-cluster
   - clusters: {}
   template:
     metadata:

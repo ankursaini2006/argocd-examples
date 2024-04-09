@@ -13,7 +13,7 @@ spec:
       source:
         repoURL: https://github.com/ankursaini2006/argocd-examples.git
         targetRevision: example
-        path: "applicationset/parent"
+        path: "applicationset/child"
       destination:
         name: in-cluster
         namespace: argocd

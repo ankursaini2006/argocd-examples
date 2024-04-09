@@ -6,8 +6,7 @@ spec:
   generators:
   - list:
       elements:
-      - appName: nginx-ingress-controller
-        namespace: ingress-nginx
+      - appName: child-app
   template:
     metadata:
       name: "{{appName}}"

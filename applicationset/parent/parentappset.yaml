@@ -23,6 +23,7 @@ spec:
         targetRevision: example
         path: "applicationset/child"
         kustomize:
+          namePrefix: "test"
           patches:
           - target:
               kind: ApplicationSet

@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ParentAppSet
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd
+    server: ''
+  source:
+    path: applicationset/parent
+    repoURL: 'https://github.com/ankursaini2006/argocd-examples'
+    targetRevision: example
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []
+  info:
+    - name: 'ParentAppSet:'
+      value: 'https://github.com/ankursaini2006/argocd-examples'

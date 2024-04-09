@@ -6,16 +6,16 @@ spec:
   generators:
   - list:
       elements:
-      - appName: ns1
+      - appname: ns1
         namespace: ns1
         cluster: in-cluster
-      - appName: ns2
+      - appname: ns2
         namespace: ns2
         cluster: in-cluster
   - clusters: {}
   template:
     metadata:
-      name: "parent-{{appName}}-crossplane"
+      name: "parent-{{appname}}-crossplane"
     spec:
       project: default
       source:
@@ -30,10 +30,10 @@ spec:
             patch: |-
               - op: replace
                 path: /metadata/name
-                value: "child-appset-{{appName}}"
+                value: "child-appset-{{appname}}"
               - op: replace
                 path: /spec/generators/0/list/elements/0/appName
-                value: "child-app-{{appName}}"
+                value: "child-app-{{appname}}"
               - op: replace
                 path: /spec/template/spec/destination/name
                 value: "{{cluster}}"

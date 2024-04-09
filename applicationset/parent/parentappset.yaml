@@ -6,11 +6,11 @@ spec:
   generators:
   - list:
       elements:
-      - appName: app1
-        namespace: ns-app1
+      - appName: ns1
+        namespace: ns1
         cluster: in-cluster
-      - appName: app2
-        namespace: ns-app2
+      - appName: ns2
+        namespace: ns2
         cluster: in-cluster
   - clusters: {}
   template:

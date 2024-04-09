@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ParentAppSet
+  name: parent-child-appset
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

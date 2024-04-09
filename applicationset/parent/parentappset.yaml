@@ -15,7 +15,7 @@ spec:
   - clusters: {}
   template:
     metadata:
-      name: 'parent-{{appName}}-crossplane'
+      name: "parent-{{appName}}-crossplane"
     spec:
       project: default
       source:

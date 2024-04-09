@@ -4,16 +4,34 @@ metadata:
   name: parent-crossplane
 spec:
   generators:
+  - list:
+      elements:
+      - appName: app1
+        namespace: ns-app1
+        cluster: in-cluster
+      - appName: app2
+        namespace: ns-app1
+        cluster: in-cluster-error
   - clusters: {}
   template:
     metadata:
-      name: 'parent-{{name}}-crossplane'
+      name: 'parent-{{appName}}-crossplane'
     spec:
       project: default
       source:
         repoURL: https://github.com/ankursaini2006/argocd-examples.git
         targetRevision: example
         path: "applicationset/child"
+        kustomize:
+          components:
+          - ChildApplicationSet.yaml
+          patches:
+          - op: replace
+            path: /spec/template/spec/destination/name
+            value: {{cluster}}
+          - op: replace
+            path: /spec/template/spec/destination/namespace
+            value: {{namespace}}
       destination:
         name: in-cluster
         namespace: argocd

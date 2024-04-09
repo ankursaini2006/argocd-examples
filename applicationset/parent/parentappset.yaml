@@ -29,6 +29,9 @@ spec:
               name: child-appset
             patch: |-
               - op: replace
+                path: /metadata/name
+                value: "child-appset-{{appName}}"
+              - op: replace
                 path: /spec/template/spec/destination/name
                 value: "{{cluster}}"
               - op: replace

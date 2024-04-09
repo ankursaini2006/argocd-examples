@@ -22,7 +22,14 @@ spec:
         repoURL: https://github.com/ankursaini2006/argocd-examples.git
         targetRevision: example
         path: "applicationset/child"
-        
+        kustomize:
+          patches:
+          - op: replace
+            path: /spec/template/spec/destination/name
+            value: {{cluster}}
+          - op: replace
+            path: /spec/template/spec/destination/namespace
+            value: {{namespace}}
       destination:
         name: in-cluster
         namespace: argocd

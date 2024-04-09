@@ -32,7 +32,7 @@ spec:
                 path: /metadata/name
                 value: "child-appset-{{appName}}"
               - op: replace
-                path: /spec/generators/0/elements/0/appName
+                path: /spec/generators/0/list/elements/0/appName
                 value: "child-app-{{appName}}"
               - op: replace
                 path: /spec/template/spec/destination/name
